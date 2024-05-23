@@ -41,6 +41,7 @@
   border: none;
   outline: none;
   background-color: transparent;
+  width: 100%;
 }
 
 .input::placeholder {
@@ -61,4 +62,18 @@
   background-color: #1a8917;
   color: white;
   cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+  .publish {
+    top: 100px;
+  }
+
+  .input {
+    font-size: 30px;
+  }
+
+  .textArea {
+    font-size: 18px;
+  }
 }
