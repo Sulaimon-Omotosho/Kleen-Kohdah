@@ -2,15 +2,7 @@ import React from 'react'
 import styles from './categoryList.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-
-const categories = [
-  { img: '/style.png', cat: 'style', color: '#57c4ff31' },
-  { img: '/fashion.png', cat: 'fashion', color: '#da85c731' },
-  { img: '/food.png', cat: 'food', color: '#7fb88133' },
-  { img: '/travel.png', cat: 'travel', color: '#ff795736' },
-  { img: '/culture.png', cat: 'culture', color: '#ffb04f45' },
-  { img: '/coding.png', cat: 'coding', color: '#5e4fff31' },
-]
+import { categories } from '@/constants'
 
 const CategoryList = () => {
   return (
