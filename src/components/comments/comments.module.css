@@ -51,7 +51,7 @@
 
 .userInfo {
   display: flex;
-  font-display: column;
+  flex-direction: column;
   gap: 5px;
   color: var(--softTextColor);
 }
@@ -78,5 +78,18 @@
   .button {
     padding: 12px 15px;
     width: 100%;
+  }
+
+  .username {
+    font-weight: 300;
+  }
+
+  .date {
+    font-size: 10px;
+  }
+
+  .desc {
+    font-size: 12px;
+    font-weight: 250;
   }
 }
