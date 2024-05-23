@@ -9,7 +9,7 @@ const Footer = () => {
       <div className={styles.info}>
         <div className={styles.logo}>
           <Image
-            src='/unclesula-logo.png'
+            src='/UncleSula-logo.png'
             alt='Uncle Sula'
             width={50}
             height={50}
