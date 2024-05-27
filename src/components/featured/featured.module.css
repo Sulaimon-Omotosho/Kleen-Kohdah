@@ -46,6 +46,13 @@
   border: none;
   border-radius: 5px;
   width: max-content;
+  transition: all 0.3s ease-in-out;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.button:hover {
+  transform: scale(1.1);
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 1280px) {

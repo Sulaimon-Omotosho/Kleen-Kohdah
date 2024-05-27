@@ -23,8 +23,16 @@ const ThemeToggle = () => {
         className={styles.ball}
         style={
           theme === 'dark'
-            ? { background: '#0f172a', left: 1 }
-            : { background: 'white', right: 1 }
+            ? {
+                background: '#0f172a',
+                left: 1,
+                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.8)',
+              }
+            : {
+                background: 'white',
+                right: 1,
+                boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.2)',
+              }
         }
       ></div>
       <Image src='/sun.png' alt='sun' width={14} height={14} />

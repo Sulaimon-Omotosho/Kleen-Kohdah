@@ -5,24 +5,29 @@
   height: 100px;
 }
 
-.social {
+/* .social {
   display: flex;
   gap: 10px;
   flex: 1;
-}
+} */
 
 .logo {
   flex: 1;
-  text-align: center;
+  text-align: start;
   font-size: 36px;
   font-weight: bold;
+}
+
+.right {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
 }
 
 .links {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex: 1;
   font-size: 20px;
 }
 
@@ -38,10 +43,13 @@
 
 @media screen and (max-width: 1024px) {
   .logo {
-    text-align-last: left;
+    text-align: left;
   }
   .social {
     display: none;
+  }
+  .right {
+    flex: 2;
   }
 }
 
@@ -57,5 +65,8 @@
   }
   .link {
     display: none;
+  }
+  .right {
+    flex: 1;
   }
 }

@@ -8,6 +8,13 @@
   position: relative;
 }
 
+.select {
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  margin-left: 50px;
+  width: max-content;
+}
+
 .button,
 .addButton {
   width: 36px;
@@ -35,6 +42,10 @@
   left: 50px;
 }
 
+.label {
+  cursor: pointer;
+}
+
 .input {
   padding: 50px;
   font-size: 64px;
@@ -42,6 +53,7 @@
   outline: none;
   background-color: transparent;
   width: 100%;
+  color: var(--textColor);
 }
 
 .input::placeholder {
@@ -62,6 +74,7 @@
   background-color: #1a8917;
   color: white;
   cursor: pointer;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.39);
 }
 
 @media screen and (max-width: 640px) {
