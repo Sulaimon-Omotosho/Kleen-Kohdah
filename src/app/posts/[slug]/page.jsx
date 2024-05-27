@@ -5,9 +5,13 @@ import Menu from '@/components/menu/Menu'
 import Comments from '@/components/comments/Comments'
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
-    cache: 'no-cache',
-  })
+  const res = await fetch(
+    `http://localhost:3000/api/posts/${slug}` ||
+      `https://uncle-sula-blog.vercel.app/api/posts/${slug}`,
+    {
+      cache: 'no-cache',
+    }
+  )
 
   if (!res.ok) {
     throw new Error('Post not found')
