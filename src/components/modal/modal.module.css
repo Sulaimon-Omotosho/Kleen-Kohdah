@@ -1,0 +1,39 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal {
+  background: var(--softBg);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  color: var(--textColor);
+}
+
+.button {
+  background: #0070f3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background: #005bb5;
+}

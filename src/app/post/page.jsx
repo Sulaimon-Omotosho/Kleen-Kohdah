@@ -14,12 +14,15 @@ import {
 } from 'firebase/storage'
 import { app } from '@/utils/firebase'
 import { categories } from '@/constants'
+import dynamic from 'next/dynamic'
+import Modal from '@/components/modal/Modal'
+import ReactQuill from 'react-quill'
 
 const storage = getStorage(app)
 
 const PostPage = () => {
   const { status } = useSession()
-  const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
+  // const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 
   const router = useRouter()
 
@@ -29,6 +32,7 @@ const PostPage = () => {
   const [value, setValue] = useState('')
   const [title, setTitle] = useState('')
   const [catSlug, setCatSlug] = useState('')
+  const [error, setError] = useState('')
 
   useEffect(() => {
     const upload = () => {
@@ -89,6 +93,12 @@ const PostPage = () => {
       .replace(/^-+|-+$/g, '')
 
   const handleSubmit = async () => {
+    if (!title.trim() || !desc.trim() || !catSlug.trim()) {
+      setError('Title, Description, Category are required!')
+      return
+    }
+    setError('')
+
     const res = await fetch('/api/posts', {
       method: 'POST',
       body: JSON.stringify({
@@ -96,7 +106,7 @@ const PostPage = () => {
         desc: value,
         img: media,
         slug: slugify(title),
-        catSlug: catSlug || 'coding',
+        catSlug: catSlug,
       }),
     })
     window.location.reload()
@@ -114,6 +124,7 @@ const PostPage = () => {
         className={styles.select}
         onChange={(e) => setCatSlug(e.target.value)}
       >
+        <option value=''>Select Category</option>
         {categories.map((cat, idx) => (
           <option key={idx} value={cat.cat}>
             {cat.cat}
@@ -156,6 +167,7 @@ const PostPage = () => {
       <button className={styles.publish} onClick={handleSubmit}>
         Publish
       </button>
+      {error && <Modal message={error} onClose={() => setError('')} />}
     </div>
   )
 }
