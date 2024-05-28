@@ -7,9 +7,6 @@ const getData = async (page, cat) => {
   const res = await fetch(
     // `http://localhost:3000/api/posts?page=${page}&cat=${cat || ''}` ||
     `https://uncle-sula-blog.vercel.app/api/posts?page=${page}&cat=${cat || ''}`
-    // {
-    //   cache: 'no-cache',
-    // }
   )
 
   if (!res.ok) {

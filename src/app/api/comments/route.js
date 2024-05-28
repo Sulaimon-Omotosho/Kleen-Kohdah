@@ -13,6 +13,9 @@ export const GET = async (req) => {
         ...(postSlug && { postSlug }),
       },
       include: { user: true },
+      orderBy: {
+        createdAt: 'desc',
+      },
     })
 
     return new NextResponse(JSON.stringify(comments, { status: 200 }))

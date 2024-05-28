@@ -93,7 +93,7 @@ const PostPage = () => {
       .replace(/^-+|-+$/g, '')
 
   const handleSubmit = async () => {
-    if (!title.trim() || !desc.trim() || !catSlug.trim()) {
+    if (!title.trim() || !value.trim() || !catSlug.trim()) {
       setError('Title, Description, Category are required!')
       return
     }
