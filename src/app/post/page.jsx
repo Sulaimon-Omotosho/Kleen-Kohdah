@@ -14,6 +14,8 @@ import {
 } from 'firebase/storage'
 import { app } from '@/utils/firebase'
 import { categories } from '@/constants'
+import Modal from '@/components/modal/Modal'
+import ReactQuill from 'react-quill'
 
 const storage = getStorage(app)
 
