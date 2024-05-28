@@ -15,13 +15,14 @@ import {
 import { app } from '@/utils/firebase'
 import { categories } from '@/constants'
 import Modal from '@/components/modal/Modal'
-import ReactQuill from 'react-quill'
+import dynamic from 'next/dynamic'
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 
 const storage = getStorage(app)
 
 const PostPage = () => {
   const { status } = useSession()
-  // const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 
   const router = useRouter()
 
