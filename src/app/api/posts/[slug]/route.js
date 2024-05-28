@@ -14,7 +14,7 @@ export const GET = async (req, { params }) => {
 
     return new NextResponse(JSON.stringify(post, { status: 200 }))
   } catch (err) {
-    console.log(err)
+    console.error(err)
     return new NextResponse(
       JSON.stringify(
         {

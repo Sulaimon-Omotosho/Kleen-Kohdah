@@ -13,6 +13,7 @@
   padding: 10px 20px;
   margin-left: 50px;
   width: max-content;
+  text-transform: capitalize;
 }
 
 .button,
