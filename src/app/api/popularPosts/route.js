@@ -9,7 +9,7 @@ export const GET = async () => {
     orderBy: {
       views: 'desc',
     },
-    include: { cat: true, user: true },
+    // include: { cat: true, user: true },
   }
 
   try {
