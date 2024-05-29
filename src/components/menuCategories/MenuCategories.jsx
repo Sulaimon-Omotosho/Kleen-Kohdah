@@ -21,14 +21,14 @@ const MenuCategories = async () => {
 
   return (
     <div className={styles.categoryList}>
-      {data.map((cat, idx) => (
+      {data?.map((cat, idx) => (
         <Link
           key={idx}
-          href={`/blog?cat=${cat.title}`}
+          href={`/blog?cat=${cat?.title}`}
           className={styles.categoryItem}
-          style={{ background: cat.color }}
+          style={{ background: cat?.color }}
         >
-          {cat.title}
+          {cat?.title}
         </Link>
       ))}
     </div>

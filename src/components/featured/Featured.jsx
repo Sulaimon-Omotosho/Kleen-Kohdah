@@ -31,7 +31,7 @@ const Featured = async () => {
         {data?.img && (
           <div className={styles.imgContainer}>
             <Image
-              src={data.img}
+              src={data?.img}
               alt='placeholder'
               fill
               className={styles.image}
@@ -40,7 +40,7 @@ const Featured = async () => {
         )}
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>
-            <Link href={`/posts/${data.slug}`}>{data.title}</Link>
+            <Link href={`/posts/${data?.slug}`}>{data?.title}</Link>
           </h1>
           <div className={styles.postDesc}>
             <p
@@ -48,7 +48,7 @@ const Featured = async () => {
             />
             ...
           </div>
-          <Link href={`/posts/${data.slug}`} className={styles.button}>
+          <Link href={`/posts/${data?.slug}`} className={styles.button}>
             Read More
           </Link>
         </div>

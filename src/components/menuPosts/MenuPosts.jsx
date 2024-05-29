@@ -27,25 +27,29 @@ const MenuPosts = async ({ withImage }) => {
   return (
     <div className={styles.items}>
       {popular?.map((pop, idx) => (
-        <Link key={pop.id} href={`/posts/${pop.slug}`} className={styles.item}>
+        <Link
+          key={pop?.id}
+          href={`/posts/${pop?.slug}`}
+          className={styles.item}
+        >
           {withImage && (
             <div className={styles.imgContainer}>
-              <Image src={pop.img} alt='img' fill className={styles.image} />
+              <Image src={pop?.img} alt='img' fill className={styles.image} />
             </div>
           )}
           <div className={styles.textContainer}>
             <span
               className={styles.category}
-              style={{ background: pop.cat.color }}
+              style={{ background: pop?.cat?.color }}
             >
-              {pop.cat.title}
+              {pop?.cat?.title}
             </span>
-            <h3 className={styles.postTitle}>{pop.title}</h3>
+            <h3 className={styles.postTitle}>{pop?.title}</h3>
             <div className={styles.detail}>
-              <span className={styles.username}>{pop.user.name}</span>
+              <span className={styles.username}>{pop?.user?.name}</span>
               <span className={styles.date}>
                 {' '}
-                - {pop.createdAt.substring(0, 10)}
+                - {pop?.createdAt.substring(0, 10)}
               </span>
             </div>
           </div>
