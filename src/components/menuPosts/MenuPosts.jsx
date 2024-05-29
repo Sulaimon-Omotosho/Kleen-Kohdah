@@ -6,8 +6,8 @@ import Link from 'next/link'
 
 const data = async () => {
   const res = await fetch(
-    `http://localhost:3000/api/popularPosts` ||
-      'https://uncle-sula-blog.vercel.app/api/popularPosts'
+    `http://localhost:3000/api/posts/popularPosts` ||
+      'https://uncle-sula-blog.vercel.app/api/posts/popularPosts'
   )
 
   if (!res.ok) {
