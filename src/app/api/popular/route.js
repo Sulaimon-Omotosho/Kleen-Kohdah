@@ -9,13 +9,13 @@ export const GET = async () => {
     orderBy: {
       views: 'desc',
     },
-    // include: { cat: true, user: true },
+    include: { cat: true, user: true },
   }
 
   try {
-    const popularPosts = await prisma.post.findMany(query)
+    const popular = await prisma.post.findMany(query)
 
-    return new NextResponse(JSON.stringify(popularPosts, { status: 200 }))
+    return new NextResponse(JSON.stringify(popular, { status: 200 }))
   } catch (err) {
     console.error(err)
     return new NextResponse(
