@@ -26,7 +26,7 @@ const MenuPosts = async ({ withImage }) => {
 
   return (
     <div className={styles.items}>
-      {popular?.map((pop, idx) => (
+      {popular?.map((pop) => (
         <Link
           key={pop?.id}
           href={`/posts/${pop?.slug}`}
