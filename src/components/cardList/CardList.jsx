@@ -11,7 +11,10 @@ const getData = async (page, cat) => {
 
   const baseURL = 'https://uncle-sula-blog.vercel.app'
 
-  const res = await fetch(`${baseURL}/api/posts?page=${page}&cat=${cat || ''}`)
+  const res = await fetch(
+    `${baseURL}/api/posts?page=${page}&cat=${cat || ''}`,
+    { cache: 'no-store' }
+  )
 
   if (!res.ok) {
     throw new Error('Posts not found')
