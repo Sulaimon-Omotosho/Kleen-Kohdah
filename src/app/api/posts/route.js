@@ -7,7 +7,7 @@ export const GET = async (req) => {
 
   const page = searchParams.get('page')
   const cat = searchParams.get('cat')
-  const sort = searchParams.get('sort')
+  // const sort = searchParams.get('sort')
 
   // const orderBy = {
   //   sort: order,
@@ -22,7 +22,7 @@ export const GET = async (req) => {
       ...(cat && { catSlug: cat }),
     },
     orderBy: {
-      [sort]: 'desc',
+      createdAt: 'desc',
     },
   }
 
