@@ -5,8 +5,11 @@ import Card from '../card/Card'
 
 const getData = async (page, cat) => {
   const res = await fetch(
-    // `http://localhost:3000/api/posts?page=${page}&cat=${cat || ''}` ||
-    `https://uncle-sula-blog.vercel.app/api/posts?page=${page}&cat=${cat || ''}`
+    `http://localhost:3000/api/posts?page=${page}&cat=${
+      cat || ''
+    }&sort=createdAt`
+    // ||
+    // `https://uncle-sula-blog.vercel.app/api/posts?page=${page}&cat=${cat || ''}`
   )
 
   if (!res.ok) {

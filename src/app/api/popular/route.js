@@ -2,10 +2,10 @@ import prisma from '@/utils/connect'
 import { NextResponse } from 'next/server'
 
 export const GET = async () => {
-  const POST_PER_PAGE = 6
+  // const POST_PER_PAGE = 6
 
   const query = {
-    take: POST_PER_PAGE,
+    take: 6,
     orderBy: {
       views: 'desc',
     },

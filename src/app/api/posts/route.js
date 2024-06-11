@@ -7,6 +7,11 @@ export const GET = async (req) => {
 
   const page = searchParams.get('page')
   const cat = searchParams.get('cat')
+  const sort = searchParams.get('sort')
+
+  // const orderBy = {
+  //   sort: order,
+  // }
 
   const POST_PER_PAGE = 5
 
@@ -17,7 +22,7 @@ export const GET = async (req) => {
       ...(cat && { catSlug: cat }),
     },
     orderBy: {
-      createdAt: 'desc',
+      [sort]: 'desc',
     },
   }
 
