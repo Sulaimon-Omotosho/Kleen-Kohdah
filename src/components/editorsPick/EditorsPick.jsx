@@ -4,8 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const data = async () => {
-  // const baseURL = 'https://uncle-sula-blog.vercel.app'
-  const baseURL = 'http://localhost:3000'
+  const baseURL = 'https://uncle-sula-blog.vercel.app'
+  // const baseURL = 'http://localhost:3000'
 
   const res = await fetch(`${baseURL}/api/editors`, { cache: 'no-store' })
 
