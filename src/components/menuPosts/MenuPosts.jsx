@@ -18,7 +18,7 @@ const data = async (page, cat) => {
 }
 
 // const data = getData()
-console.log(data)
+// console.log(data)
 
 const MenuPosts = async ({ withImage }) => {
   const popular = await data()
