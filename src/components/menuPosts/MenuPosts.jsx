@@ -6,7 +6,7 @@ import Link from 'next/link'
 const data = async () => {
   const baseURL = 'https://uncle-sula-blog.vercel.app'
 
-  const res = await fetch(`${baseURL}/api/popular`)
+  const res = await fetch(`${baseURL}/api/popular`, { cache: 'no-store' })
 
   if (!res.ok) {
     throw new Error('Posts not found')
@@ -15,12 +15,8 @@ const data = async () => {
   return res.json()
 }
 
-// const data = getData()
-// console.log(data)
-
 const MenuPosts = async ({ withImage }) => {
   const popular = await data()
-  // console.log(popular)
 
   return (
     <div className={styles.items}>
@@ -54,32 +50,6 @@ const MenuPosts = async ({ withImage }) => {
         </Link>
       ))}
     </div>
-    // <div className={styles.items}>
-    //   {popular?.map((pop, idx) => (
-    //     <Link key={idx} href='/' className={styles.item}>
-    //       {withImage && (
-    //         <div className={styles.imgContainer}>
-    //           <Image src={pop?.img} alt='img' fill className={styles.image} />
-    //         </div>
-    //       )}
-    //       <div className={styles.textContainer}>
-    //         <span
-    //           className={styles.category}
-    //           style={{ background: pop?.color }}
-    //         >
-    //           {pop?.cat}
-    //         </span>
-    //         <h3 className={styles.postTitle}>
-    //           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    //         </h3>
-    //         <div className={styles.detail}>
-    //           <span className={styles.username}>Sulaimon Omotosho</span>
-    //           <span className={styles.date}> - 26.06.2024</span>
-    //         </div>
-    //       </div>
-    //     </Link>
-    //   ))}
-    // </div>
   )
 }
 

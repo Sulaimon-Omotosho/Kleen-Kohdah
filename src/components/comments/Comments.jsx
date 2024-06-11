@@ -22,10 +22,12 @@ const fetcher = async (url) => {
 
 const Comments = ({ postSlug }) => {
   const { status } = useSession()
+  const baseURL = 'https://uncle-sula-blog.vercel.app'
 
   const { data, mutate, isLoading } = useSWR(
-    // `http://localhost:3000/api/comments?postSlug=${postSlug}` ||
-    `https://uncle-sula-blog.vercel.app/api/comments?postSlug=${postSlug}`,
+    `${baseURL}/api/comments?postSlug=${postSlug}`,
+
+    // { cache: 'no-store' },
     fetcher
   )
 

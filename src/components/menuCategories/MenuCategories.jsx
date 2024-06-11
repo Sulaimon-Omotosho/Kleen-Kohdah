@@ -1,12 +1,11 @@
 import React from 'react'
 import styles from './menuCategories.module.css'
-// import { categories } from '@/constants'
 import Link from 'next/link'
 
 const getData = async () => {
   const baseURL = 'https://uncle-sula-blog.vercel.app'
 
-  const res = await fetch(`${baseURL}/api/categories`)
+  const res = await fetch(`${baseURL}/api/categories`, { cache: 'no-store' })
 
   if (!res.ok) {
     throw new Error('Categories not found')
