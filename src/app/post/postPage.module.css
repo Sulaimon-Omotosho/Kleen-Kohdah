@@ -63,7 +63,7 @@
 
 .textArea {
   width: 100%;
-  color: var(--textColor);
+  /* color: var(--textColor); */
 }
 
 .publish {
