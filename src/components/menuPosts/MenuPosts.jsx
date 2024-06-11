@@ -1,14 +1,12 @@
 import React from 'react'
 import styles from './menuPosts.module.css'
-import { popular } from '@/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const data = async (page, cat) => {
-  const res = await fetch(
-    // `http://localhost:3000/api/posts?sort=views`
-    'https://uncle-sula-blog.vercel.app/api/popular'
-  )
+const data = async () => {
+  const baseURL = 'https://uncle-sula-blog.vercel.app'
+
+  const res = await fetch(`${baseURL}/api/popular`)
 
   if (!res.ok) {
     throw new Error('Posts not found')

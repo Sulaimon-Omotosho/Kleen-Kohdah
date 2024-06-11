@@ -4,12 +4,14 @@ import Pagination from '../pagination/Pagination'
 import Card from '../card/Card'
 
 const getData = async (page, cat) => {
-  const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ''}` ||
-      `https://uncle-sula-blog.vercel.app/api/posts?page=${page}&cat=${
-        cat || ''
-      }`
-  )
+  // const baseURL =
+  //   process.env.NODE_ENV === 'development'
+  //     ? 'http://localhost:3000'
+  //     : 'https://uncle-sula-blog.vercel.app'
+
+  const baseURL = 'https://uncle-sula-blog.vercel.app'
+
+  const res = await fetch(`${baseURL}/api/posts?page=${page}&cat=${cat || ''}`)
 
   if (!res.ok) {
     throw new Error('Posts not found')
