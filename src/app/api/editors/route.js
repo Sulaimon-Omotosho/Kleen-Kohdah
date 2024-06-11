@@ -3,6 +3,9 @@ import { NextResponse } from 'next/server'
 
 export const GET = async () => {
   const query = {
+    where: {
+      editor: true,
+    },
     take: 6,
     orderBy: {
       views: 'desc',
