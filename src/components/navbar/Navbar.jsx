@@ -23,12 +23,12 @@ const Navbar = () => {
           <Link href='/' className={styles.link}>
             Homepage
           </Link>
-          <Link href='/' className={styles.link}>
+          {/* <Link href='/' className={styles.link}>
             Contact
           </Link>
           <Link href='/' className={styles.link}>
             About
-          </Link>
+          </Link> */}
           <AuthLinks />
         </div>
       </div>

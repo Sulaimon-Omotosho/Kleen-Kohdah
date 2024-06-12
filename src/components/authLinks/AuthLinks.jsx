@@ -35,12 +35,12 @@ const AuthLinks = () => {
           <Link href='/' onClick={() => setOpen(!open)}>
             Homepage
           </Link>
-          <Link href='/' onClick={() => setOpen(!open)}>
+          {/* <Link href='/' onClick={() => setOpen(!open)}>
             About
           </Link>
           <Link href='/' onClick={() => setOpen(!open)}>
             Contact
-          </Link>
+          </Link> */}
           {status === 'unauthenticated' ? (
             <Link href='/login' onClick={() => setOpen(!open)}>
               Login
